@@ -20,7 +20,6 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
-
   header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
   .logo { font-size: 15px; font-weight: 600; color: var(--text); display: flex; align-items: center; gap: 8px; }
   .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-mid); }
@@ -30,19 +29,15 @@
   .sync-dot.syncing { background: #EF9F27; animation: pulse 1s infinite; }
   .sync-dot.error { background: #E24B4A; }
   @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
-
   .container { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
-
   .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
   .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
   .stat-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; margin-bottom: 4px; }
   .stat-value { font-size: 26px; font-weight: 600; color: var(--text); font-family: 'DM Mono', monospace; }
-
   .progress-wrap { margin-bottom: 20px; }
   .progress-track { height: 5px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
   .progress-fill { height: 100%; background: var(--green-mid); border-radius: 99px; transition: width 0.5s cubic-bezier(.4,0,.2,1); }
   .progress-label { font-size: 11px; color: var(--text3); margin-top: 6px; text-align: right; }
-
   .add-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 20px; overflow: hidden; box-shadow: var(--shadow); }
   .add-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; cursor: pointer; user-select: none; }
   .add-header-left { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--text); }
@@ -51,42 +46,31 @@
   .add-section.open .chev { transform: rotate(180deg); }
   .add-body { display: none; padding: 0 18px 18px; border-top: 1px solid var(--border); }
   .add-section.open .add-body { display: flex; flex-direction: column; gap: 12px; padding-top: 16px; }
-
   .form-group { display: flex; flex-direction: column; gap: 4px; }
   .form-label { font-size: 11px; color: var(--text3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-  input[type=text], select, textarea {
-    width: 100%; font-family: 'DM Sans', sans-serif; font-size: 14px;
-    padding: 9px 12px; border-radius: var(--radius); border: 1px solid var(--border);
-    background: var(--bg); color: var(--text); outline: none; transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  input[type=text]:focus, select:focus, textarea:focus {
-    border-color: var(--purple-mid); box-shadow: 0 0 0 3px rgba(127,119,221,0.12); background: var(--surface);
-  }
+  input[type=text], select, textarea { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 9px 12px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg); color: var(--text); outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  input[type=text]:focus, select:focus, textarea:focus { border-color: var(--purple-mid); box-shadow: 0 0 0 3px rgba(127,119,221,0.12); background: var(--surface); }
   textarea { resize: none; min-height: 72px; line-height: 1.55; }
   select { cursor: pointer; }
   .btn-add { align-self: flex-end; background: var(--purple); color: white; border: none; border-radius: var(--radius); padding: 10px 20px; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.15s, transform 0.1s; }
   .btn-add:hover { background: #3C3489; }
   .btn-add:active { transform: scale(0.98); }
   .btn-add:disabled { opacity: 0.5; cursor: not-allowed; }
-
   .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
   .filter-btn { font-size: 12px; padding: 5px 13px; border-radius: 99px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s; }
   .filter-btn:hover { border-color: var(--border2); color: var(--text); }
   .filter-btn.active { background: var(--purple-light); color: var(--purple); border-color: var(--purple-mid); font-weight: 500; }
-
   .task-list { display: flex; flex-direction: column; gap: 8px; }
   .task-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: opacity 0.25s, box-shadow 0.15s; box-shadow: var(--shadow); }
   .task-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
   .task-card.done { opacity: 0.48; }
   .task-card.done .task-title { text-decoration: line-through; color: var(--text3); }
-
   .task-main { display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px; }
   .checkbox { width: 20px; height: 20px; min-width: 20px; border-radius: 6px; border: 1.5px solid var(--border2); background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-top: 1px; transition: background 0.15s, border-color 0.15s; }
   .checkbox.checked { background: var(--green-mid); border-color: var(--green-mid); }
   .checkbox svg { display: none; }
   .checkbox.checked svg { display: block; }
-
   .task-body { flex: 1; min-width: 0; }
   .task-title { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.5; word-break: break-word; }
   .task-preview { font-size: 13px; color: var(--text2); margin-top: 3px; word-break: break-word; line-height: 1.45; }
@@ -100,7 +84,6 @@
   .bp-media { background: var(--amber-light); color: var(--amber); }
   .bp-baja { background: var(--green-light); color: var(--green); }
   .b-neutral { background: var(--surface2); color: var(--text2); }
-
   .task-right { display: flex; gap: 2px; align-items: flex-start; opacity: 0; transition: opacity 0.15s; }
   .task-card:hover .task-right { opacity: 1; }
   .icon-btn { width: 28px; height: 28px; border-radius: 7px; border: none; background: transparent; color: var(--text3); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: background 0.12s, color 0.12s; }
@@ -109,11 +92,9 @@
   .chev-btn { width: 28px; height: 28px; border-radius: 7px; border: none; background: transparent; color: var(--text3); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.12s, transform 0.2s; font-size: 18px; }
   .chev-btn.open { transform: rotate(180deg); }
   .chev-btn:hover { background: var(--surface2); }
-
   .expand-area { padding: 0 16px 14px 52px; }
   .desc-box { font-size: 13px; color: var(--text2); line-height: 1.6; background: var(--surface2); border-radius: var(--radius); padding: 10px 12px; border-left: 2px solid var(--purple-mid); word-break: break-word; }
   .desc-empty { font-size: 13px; color: var(--text3); font-style: italic; }
-
   .edit-area { padding: 0 16px 14px 52px; display: flex; flex-direction: column; gap: 10px; }
   .edit-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
   .edit-actions { display: flex; gap: 8px; justify-content: flex-end; }
@@ -121,17 +102,11 @@
   .btn-save:hover { background: #9FE1CB; }
   .btn-cancel { font-size: 13px; padding: 7px 16px; border-radius: var(--radius); border: 1px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; font-family: 'DM Sans', sans-serif; }
   .btn-cancel:hover { background: var(--surface2); }
-
   .empty { text-align: center; padding: 3rem 1rem; color: var(--text3); font-size: 14px; }
-
-  @media (max-width: 600px) {
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-    .form-grid, .edit-grid { grid-template-columns: 1fr 1fr; }
-  }
+  @media (max-width: 600px) { .stats-grid { grid-template-columns: 1fr 1fr; } .form-grid, .edit-grid { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo"><div class="logo-dot"></div>Pendientes Víctor</div>
   <button class="sync-pill" onclick="loadData()">
@@ -139,7 +114,6 @@
     <span id="sync-msg">Conectando...</span>
   </button>
 </header>
-
 <div class="container">
   <div class="stats-grid">
     <div class="stat"><div class="stat-label">Total</div><div class="stat-value" id="s-total">0</div></div>
@@ -147,48 +121,27 @@
     <div class="stat"><div class="stat-label">Hechas</div><div class="stat-value" id="s-done">0</div></div>
     <div class="stat"><div class="stat-label">Progreso</div><div class="stat-value" id="s-pct">0%</div></div>
   </div>
-
   <div class="progress-wrap">
     <div class="progress-track"><div class="progress-fill" id="progress" style="width:0%"></div></div>
     <div class="progress-label" id="progress-label">0 de 0 completadas</div>
   </div>
-
   <div class="add-section" id="add-section">
     <div class="add-header" onclick="toggleAdd()">
       <div class="add-header-left"><div class="add-icon">+</div>Nueva tarea</div>
       <span class="chev">&#8964;</span>
     </div>
     <div class="add-body">
-      <div class="form-group">
-        <div class="form-label">Nombre *</div>
-        <input type="text" id="f-title" placeholder="¿Qué hay que hacer?" maxlength="200" />
-      </div>
-      <div class="form-group">
-        <div class="form-label">Descripción</div>
-        <textarea id="f-desc" placeholder="Detalles adicionales (opcional)..."></textarea>
-      </div>
+      <div class="form-group"><div class="form-label">Nombre *</div><input type="text" id="f-title" placeholder="¿Qué hay que hacer?" maxlength="200" /></div>
+      <div class="form-group"><div class="form-label">Descripción</div><textarea id="f-desc" placeholder="Detalles adicionales (opcional)..."></textarea></div>
       <div class="form-grid">
-        <div class="form-group">
-          <div class="form-label">Categoría</div>
-          <select id="f-cat"><option value="DITSA">DITSA</option><option value="Personal">Personal</option><option value="Familia">Familia</option><option value="Otro">Otro</option></select>
-        </div>
-        <div class="form-group">
-          <div class="form-label">Prioridad</div>
-          <select id="f-pri"><option value="Alta">Alta</option><option value="Media" selected>Media</option><option value="Baja">Baja</option></select>
-        </div>
-        <div class="form-group">
-          <div class="form-label">Responsable</div>
-          <select id="f-resp"><option value="Víctor">Víctor</option><option value="Uri">Uri</option><option value="Kevin">Kevin</option><option value="Miguel">Miguel</option><option value="Equipo">Equipo</option></select>
-        </div>
+        <div class="form-group"><div class="form-label">Categoría</div><select id="f-cat"><option value="DITSA">DITSA</option><option value="Personal">Personal</option><option value="Familia">Familia</option><option value="Otro">Otro</option></select></div>
+        <div class="form-group"><div class="form-label">Prioridad</div><select id="f-pri"><option value="Alta">Alta</option><option value="Media" selected>Media</option><option value="Baja">Baja</option></select></div>
+        <div class="form-group"><div class="form-label">Responsable</div><select id="f-resp"><option value="Víctor">Víctor</option><option value="Uri">Uri</option><option value="Kevin">Kevin</option><option value="Miguel">Miguel</option><option value="Equipo">Equipo</option></select></div>
       </div>
-      <div class="form-group">
-        <div class="form-label">Fecha límite</div>
-        <input type="text" id="f-date" placeholder="ej. 30-may, viernes..." maxlength="50" />
-      </div>
+      <div class="form-group"><div class="form-label">Fecha límite</div><input type="text" id="f-date" placeholder="ej. 30-may, viernes..." maxlength="50" /></div>
       <button class="btn-add" id="btn-add" onclick="addTask()">+ Agregar tarea</button>
     </div>
   </div>
-
   <div class="filter-bar">
     <button class="filter-btn active" onclick="setFilter('all',this)">Todas</button>
     <button class="filter-btn" onclick="setFilter('pending',this)">Pendientes</button>
@@ -198,14 +151,11 @@
     <button class="filter-btn" onclick="setFilter('Familia',this)">Familia</button>
     <button class="filter-btn" onclick="setFilter('alta',this)">Prioridad alta</button>
   </div>
-
   <div class="task-list" id="task-list"></div>
   <div class="empty" id="empty" style="display:none">✓ No hay tareas en esta vista.</div>
 </div>
-
 <script>
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyGYmCtQp-4DlE9XggkJoSbOgfxk_cUjKQfK_Oyv4NPokxTcSMbf9FVscJsgqNCkpTcoQ/exec';
-
 let tasks = [], filter = 'all', expandedId = null, editingId = null, addOpen = false;
 
 function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
@@ -220,18 +170,26 @@ function setSyncStatus(state, msg) {
 async function loadData() {
   setSyncStatus('syncing','Cargando...');
   try {
-    const res = await fetch(SCRIPT_URL);
+    const res = await fetch(SCRIPT_URL + '?t=' + Date.now());
     const data = await res.json();
-    const rows = (data.values||[]).slice(1);
-    if (rows.length === 0) {
-      tasks = defaultTasks();
-      await saveData();
-    } else {
-      tasks = rows.map(r => ({
-        id: r[0]||uid(), title: r[1]||'', desc: r[2]||'', cat: r[3]||'DITSA',
-        pri: r[4]||'Media', resp: r[5]||'Víctor', date: r[6]||'',
-        done: r[7]==='TRUE', created: r[8]||today()
-      })).filter(t=>t.title);
+    // Nuevo formato: {tasks: [...]}
+    if (data.tasks && Array.isArray(data.tasks)) {
+      if (data.tasks.length === 0) {
+        tasks = defaultTasks();
+        await saveData();
+      } else {
+        tasks = data.tasks.map(t => ({
+          id: t.id || uid(),
+          title: t.title || '',
+          desc: t.desc || '',
+          cat: t.cat || 'DITSA',
+          pri: t.pri || 'Media',
+          resp: t.resp || 'Víctor',
+          date: t.date || '',
+          done: t.done === true || t.done === 'TRUE' || t.done === 'true',
+          created: t.created || today()
+        })).filter(t => t.title);
+      }
     }
     setSyncStatus('ok','Guardado · ' + new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'}));
     render();
@@ -254,7 +212,7 @@ async function saveData() {
       setSyncStatus('ok','Guardado · ' + new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'}));
     } else throw new Error(data.message);
   } catch(e) {
-    setSyncStatus('error','No se pudo guardar: ' + e.message);
+    setSyncStatus('error','No se pudo guardar');
   }
 }
 
@@ -271,99 +229,75 @@ function defaultTasks() {
   ];
 }
 
-function toggleAdd() {
-  addOpen = !addOpen;
-  document.getElementById('add-section').classList.toggle('open', addOpen);
-}
+function toggleAdd() { addOpen=!addOpen; document.getElementById('add-section').classList.toggle('open',addOpen); }
 
 async function addTask() {
-  const title = document.getElementById('f-title').value.trim();
-  if (!title) { document.getElementById('f-title').focus(); return; }
-  const btn = document.getElementById('btn-add');
-  btn.disabled = true;
-  tasks.unshift({ id:uid(), title, desc:document.getElementById('f-desc').value.trim(), cat:document.getElementById('f-cat').value, pri:document.getElementById('f-pri').value, resp:document.getElementById('f-resp').value, date:document.getElementById('f-date').value.trim(), done:false, created:today() });
+  const title=document.getElementById('f-title').value.trim();
+  if(!title){document.getElementById('f-title').focus();return;}
+  const btn=document.getElementById('btn-add'); btn.disabled=true;
+  tasks.unshift({id:uid(),title,desc:document.getElementById('f-desc').value.trim(),cat:document.getElementById('f-cat').value,pri:document.getElementById('f-pri').value,resp:document.getElementById('f-resp').value,date:document.getElementById('f-date').value.trim(),done:false,created:today()});
   ['f-title','f-desc','f-date'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('f-pri').value='Media';
-  render();
-  await saveData();
-  btn.disabled = false;
+  render(); await saveData(); btn.disabled=false;
 }
 
 async function toggleTask(id) {
   const t=tasks.find(t=>t.id===id);
-  if(t){ t.done=!t.done; render(); await saveData(); }
+  if(t){t.done=!t.done;render();await saveData();}
 }
 
 function deleteTask(id) {
-  if(!confirm('¿Eliminar esta tarea?')) return;
+  if(!confirm('¿Eliminar esta tarea?'))return;
   tasks=tasks.filter(t=>t.id!==id);
-  if(expandedId===id) expandedId=null;
-  if(editingId===id) editingId=null;
-  render(); saveData();
+  if(expandedId===id)expandedId=null;
+  if(editingId===id)editingId=null;
+  render();saveData();
 }
 
-function startEdit(id) { editingId=id; expandedId=id; render(); setTimeout(()=>{ const el=document.getElementById('et-'+id); if(el)el.focus(); },50); }
-function cancelEdit() { editingId=null; render(); }
+function startEdit(id){editingId=id;expandedId=id;render();setTimeout(()=>{const el=document.getElementById('et-'+id);if(el)el.focus();},50);}
+function cancelEdit(){editingId=null;render();}
 
 async function saveEdit(id) {
   const t=tasks.find(t=>t.id===id);
   if(t){
-    const g=s=>{ const el=document.getElementById(s+id); return el?el.value:null; };
-    if(g('et-')&&g('et-').trim()) t.title=g('et-').trim();
-    if(g('ed-')!==null) t.desc=g('ed-').trim();
-    if(g('ec-')) t.cat=g('ec-');
-    if(g('ep-')) t.pri=g('ep-');
-    if(g('er-')) t.resp=g('er-');
-    if(g('edt-')!==null) t.date=g('edt-').trim();
+    const g=s=>{const el=document.getElementById(s+id);return el?el.value:null;};
+    if(g('et-')&&g('et-').trim())t.title=g('et-').trim();
+    if(g('ed-')!==null)t.desc=g('ed-').trim();
+    if(g('ec-'))t.cat=g('ec-');
+    if(g('ep-'))t.pri=g('ep-');
+    if(g('er-'))t.resp=g('er-');
+    if(g('edt-')!==null)t.date=g('edt-').trim();
   }
-  editingId=null; render(); await saveData();
+  editingId=null;render();await saveData();
 }
 
-function toggleExpand(id) {
-  expandedId=expandedId===id?null:id;
-  if(editingId===id&&expandedId!==id) editingId=null;
-  render();
-}
-
-function setFilter(f,el) {
-  filter=f;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
-  render();
-}
-
-function catClass(c) { return 'badge bc-'+(c||'otro').toLowerCase(); }
-function priClass(p) { return 'badge bp-'+(p||'media').toLowerCase(); }
-
-function mkSelect(id,opts,val) {
-  return `<select id="${id}" style="font-family:'DM Sans',sans-serif;font-size:13px;padding:8px 10px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);width:100%;outline:none;">${opts.map(o=>`<option ${val===o?'selected':''}>${o}</option>`).join('')}</select>`;
-}
+function toggleExpand(id){expandedId=expandedId===id?null:id;if(editingId===id&&expandedId!==id)editingId=null;render();}
+function setFilter(f,el){filter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');render();}
+function catClass(c){return 'badge bc-'+(c||'otro').toLowerCase();}
+function priClass(p){return 'badge bp-'+(p||'media').toLowerCase();}
+function mkSel(id,opts,val){return `<select id="${id}" style="font-family:'DM Sans',sans-serif;font-size:13px;padding:8px 10px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);width:100%;outline:none;">${opts.map(o=>`<option ${val===o?'selected':''}>${o}</option>`).join('')}</select>`;}
 
 function render() {
-  const done=tasks.filter(t=>t.done).length, total=tasks.length;
+  const done=tasks.filter(t=>t.done).length,total=tasks.length;
   document.getElementById('s-total').textContent=total;
   document.getElementById('s-pending').textContent=total-done;
   document.getElementById('s-done').textContent=done;
   document.getElementById('s-pct').textContent=total?Math.round(done/total*100)+'%':'0%';
   document.getElementById('progress').style.width=total?Math.round(done/total*100)+'%':'0%';
   document.getElementById('progress-label').textContent=`${done} de ${total} completadas`;
-
   const visible=tasks.filter(t=>{
-    if(filter==='all') return true;
-    if(filter==='pending') return !t.done;
-    if(filter==='done') return t.done;
-    if(filter==='alta') return t.pri==='Alta'&&!t.done;
+    if(filter==='all')return true;
+    if(filter==='pending')return !t.done;
+    if(filter==='done')return t.done;
+    if(filter==='alta')return t.pri==='Alta'&&!t.done;
     return t.cat===filter;
   });
-
-  const list=document.getElementById('task-list'), empty=document.getElementById('empty');
-  if(!visible.length){ list.innerHTML=''; empty.style.display='block'; return; }
+  const list=document.getElementById('task-list'),empty=document.getElementById('empty');
+  if(!visible.length){list.innerHTML='';empty.style.display='block';return;}
   empty.style.display='none';
-
   list.innerHTML=visible.map(t=>{
-    const isExp=expandedId===t.id, isEdit=editingId===t.id, hasDesc=t.desc&&t.desc.length>0;
-    return `
-    <div class="task-card ${t.done?'done':''}">
+    const isExp=expandedId===t.id,isEdit=editingId===t.id,hasDesc=t.desc&&t.desc.length>0;
+    return `<div class="task-card ${t.done?'done':''}">
       <div class="task-main">
         <div class="checkbox ${t.done?'checked':''}" onclick="toggleTask('${t.id}')" role="checkbox" aria-checked="${t.done}" tabindex="0">
           <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><polyline points="1,5 4.5,8.5 11,1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -384,31 +318,18 @@ function render() {
           <button class="icon-btn del" onclick="deleteTask('${t.id}')">🗑</button>
         </div>
       </div>
-      ${isExp&&isEdit?`
-        <div class="edit-area">
-          <input id="et-${t.id}" value="${esc(t.title)}" placeholder="Nombre..." style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:9px 12px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);width:100%;outline:none;" />
-          <textarea id="ed-${t.id}" placeholder="Descripción..." style="font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 12px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text2);width:100%;resize:none;min-height:60px;line-height:1.5;outline:none;">${esc(t.desc)}</textarea>
-          <div class="edit-grid">
-            ${mkSelect('ec-'+t.id,['DITSA','Personal','Familia','Otro'],t.cat)}
-            ${mkSelect('ep-'+t.id,['Alta','Media','Baja'],t.pri)}
-            ${mkSelect('er-'+t.id,['Víctor','Uri','Kevin','Miguel','Equipo'],t.resp)}
-          </div>
-          <input id="edt-${t.id}" value="${esc(t.date)}" placeholder="Fecha límite..." style="font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 12px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);width:100%;outline:none;" />
-          <div class="edit-actions">
-            <button class="btn-cancel" onclick="cancelEdit()">Cancelar</button>
-            <button class="btn-save" onclick="saveEdit('${t.id}')">✓ Guardar</button>
-          </div>
-        </div>
-      `:isExp?`
-        <div class="expand-area">
-          ${hasDesc?`<div class="desc-box">${esc(t.desc)}</div>`:`<div class="desc-empty">Sin descripción — usa el lápiz para agregar una.</div>`}
-        </div>
-      `:''}
+      ${isExp&&isEdit?`<div class="edit-area">
+        <input id="et-${t.id}" value="${esc(t.title)}" placeholder="Nombre..." style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:9px 12px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);width:100%;outline:none;" />
+        <textarea id="ed-${t.id}" placeholder="Descripción..." style="font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 12px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text2);width:100%;resize:none;min-height:60px;line-height:1.5;outline:none;">${esc(t.desc)}</textarea>
+        <div class="edit-grid">${mkSel('ec-'+t.id,['DITSA','Personal','Familia','Otro'],t.cat)}${mkSel('ep-'+t.id,['Alta','Media','Baja'],t.pri)}${mkSel('er-'+t.id,['Víctor','Uri','Kevin','Miguel','Equipo'],t.resp)}</div>
+        <input id="edt-${t.id}" value="${esc(t.date)}" placeholder="Fecha límite..." style="font-family:'DM Sans',sans-serif;font-size:13px;padding:9px 12px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);width:100%;outline:none;" />
+        <div class="edit-actions"><button class="btn-cancel" onclick="cancelEdit()">Cancelar</button><button class="btn-save" onclick="saveEdit('${t.id}')">✓ Guardar</button></div>
+      </div>`:isExp?`<div class="expand-area">${hasDesc?`<div class="desc-box">${esc(t.desc)}</div>`:`<div class="desc-empty">Sin descripción — usa el lápiz para agregar una.</div>`}</div>`:''}
     </div>`;
   }).join('');
 }
 
-document.getElementById('f-title').addEventListener('keydown',e=>{ if(e.key==='Enter') addTask(); });
+document.getElementById('f-title').addEventListener('keydown',e=>{if(e.key==='Enter')addTask();});
 loadData();
 </script>
 </body>
